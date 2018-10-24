@@ -3,8 +3,10 @@ def oxford_comma(array)
   array.each do |word|
     if word == array[0]
       str << "#{word}"
-    elsif word == array[-1]
+    elsif array[1] == array[-1] && array[1] == word
       str << " and #{word}"
+    elsif word == array[-1]
+      str << ", and #{word}"
     else
       str << ", #{word}"
     end
